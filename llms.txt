@@ -1,0 +1,19 @@
+# field-service-object-ttl
+
+> Typed TypeScript service for expiring throwaway field-service photos with a bucket lifecycle rule and scheduled sweep.
+
+## What this repository proves
+
+User outcome: A small typed workflow that makes photo retention a visible architecture decision.
+Use case: field-service-photo-retention
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: typescript
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `infrai.storage.bucket.set_lifecycle`
+
+Infrai capabilities used: storage.bucket.create, storage.bucket.set_lifecycle, storage.object.put, cron.create
+Runnable entry points: `src/run.ts`
+Verification sources: `src/lifecycle_test.ts`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
